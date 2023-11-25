@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <img src="login.jpeg" alt="">
+
+  <form id="loginForm">
+    <label for="username">Login ID:</label>
+    <input type="text" id="username" name="username">
+    <span class="error" id="usernameError"></span><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span class="error" id="passwordError"></span><br><br>
+
+    <input type="submit" value="Login" onclick="validateForm()">
+  </form>
+
+  <script>
+    function validateForm() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      if (username.length < 6) {
+        alert('Login ID must be at least 6 characters long');
+        return false;
+      }
+
+      if (password.length < 8) {
+        alert('Password must be at least 8 characters long');
+        return false;
+      }
+
+      // If all validations pass, you can proceed with form submission or further actions
+      alert('Login successful!');
+      return true;
+    }
+  </script>
+</body>
+
+</html>
